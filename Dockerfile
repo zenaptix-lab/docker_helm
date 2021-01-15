@@ -1,7 +1,7 @@
 ###
 # Build Helm
 ###
-FROM golang:alpine AS builder
+FROM ghcr.io/rblaine95/golang:alpine AS builder
 
 WORKDIR /opt/build
 
@@ -18,7 +18,7 @@ RUN cd helm && make -j$(nproc)
 ###
 # Copy from Builder
 ###
-FROM alpine:3.12
+FROM ghcr.io/rblaine95/alpine:3.12
 
 COPY --from=builder /opt/build/helm/bin/helm /usr/local/bin
 
