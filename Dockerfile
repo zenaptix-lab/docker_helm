@@ -18,7 +18,7 @@ RUN cd helm && make -j$(nproc)
 ###
 # Copy from Builder
 ###
-FROM quay.io/zenlab/alpine:3.13
+FROM quay.io/zenlab/alpine:3.14
 
 COPY --from=builder /opt/build/helm/bin/helm /usr/local/bin
 
@@ -26,4 +26,3 @@ RUN apk add --no-cache git openssh
 
 ENTRYPOINT ["helm"]
 CMD ["--help"]
-
