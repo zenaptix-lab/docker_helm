@@ -1,7 +1,7 @@
 ###
 # Build Helm
 ###
-FROM quay.io/zenlab/golang:1.19-alpine AS builder
+FROM quay.io/zenlab/golang:1.20-alpine AS builder
 
 WORKDIR /opt/build
 
